@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=  , initial-scale=1.0">
+   <title>Facebook</title>
+   <link rel="shortcut icon" href="./images/icon/favicon.png" type="image/x-icon">
+   <!-- tailwind css link -->
+   <script src="https://cdn.tailwindcss.com"></script>
+   <!-- tailwind custom css -->
+   <script>
+      tailwind.config = {
+         theme: {
+            extend: {
+               colors: {
+                  primary: '#F0F2F5',
+                  secondary: '#E4E6EB'
+               }
+            }
+         }
+      }
+   </script>
+</head>
+
+<body>
+   <!-- header area start -->
+   <header>
+      <div class="px-3 mt-2">
+         <div class="grid grid-cols-3">
+            <!-- facebook logo area -->
+            <div>
+               <a href="index.html">
+                  <img src="./images/Header-Logo.png" alt="Facebook logo">
+               </a>
+            </div>
+            <!-- facebook search area -->
+            <div>
+               <form class="bg-secondary rounded-full p-2 w-10 sm:w-10 md:w-full">
+                  <div class="flex items-center">
+                     <img class="w-8 h-8 object-cover" src="./images/icon/search.png" alt="search bar">
+                     <input type="search" class="bg-secondary hidden sm:hidden md:block md:w-full pl-2
+                      md:none focus:outline-none" name="search" id="search" placeholder="Search Facebook">
+                  </div>
+               </form>
+            </div>
+            <!-- facebook messenger, Notification, profile area -->
+            <div>
+               <ul class="flex items-center justify-end gap-x-2">
+                  <li class="bg-secondary flex items-center justify-center w-10 h-10 rounded-full">
+                     <a href="#">
+                        <img class="w-8 mx-auto" src="./images/icon/messenger.png" alt="Facebook messenger">
+                     </a>
+                  </li>
+                  <li class="bg-secondary flex items-center justify-center w-10 h-10 rounded-full">
+                     <a href="#">
+                        <img class="w-6" src="./images/icon/notification.png" alt="Facebook Notification">
+                     </a>
+                  </li>
+                  <li class="flex items-center justify-center w-10 h-10 rounded-full">
+                     <a href="#">
+                        <img class="w-full h-10 rounded-full object-cover" src="./images/profile.png" alt="user">
+                     </a>
+                  </li>
+               </ul>
+            </div>
+         </div>
+      </div>
+   </header>
+   <!-- header area end -->
+
+
+   <!-- tailwind js link -->
+   <script src="./tailwind.config.js"></script>
+</body>
+
+</html>
