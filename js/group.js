@@ -17,16 +17,53 @@ const groups = [
    }
 
 ]
-const groupsAll = document.getElementById("groups-all")
-groups.map(group => {
-   groupsAll.innerHTML += `
-   <a href="#" class="flex items-center py-2 px-2 rounded-md hover:bg-[#E4E6E9] duration-500">
-      <li class="list-none w-7 h-7">
-         <img class="w-5 h-5 rounded-lg" src="${group.img}" alt="">
-      </li>
-      <li class="list-none">
-         <p class="font-semibold text-base text-black">${group.name.length >= 14 ? group.name.slice(0, 20) : ""}...</p>
-      </li>
-   </a>
-   `
-});
+
+
+// group short
+const groupShort = [
+   {
+      img: "https://scontent.fjsr1-1.fna.fbcdn.net/v/t39.30808-6/334097861_119772887565661_4377678434330611735_n.png?stp=c32.0.50.50a_cp0_dst-png_p50x50&_nc_cat=100&ccb=1-7&_nc_sid=70495d&_nc_eui2=AeHT4D0LwFQ8rHyHoAg4_qwdq6YuzBtpbf2rpi7MG2lt_TavsJthsvE63uofJ9UPMmzL2ipcXfYuqAOVypscFN9V&_nc_ohc=7ITkNnx19oMAX-YkRXL&_nc_zt=23&_nc_ht=scontent.fjsr1-1.fna&oh=00_AfAPfoQp7y2lPoVT1c8EXZqSNN0g5e2z4OPVwSmSSfFJDA&oe=64085450",
+      name: "Programming Hero Community"
+   },
+   {
+      img: "https://scontent.fjsr1-1.fna.fbcdn.net/v/t39.30808-6/225517276_360748029010722_8314467806930372799_n.jpg?stp=c3.0.50.50a_cp0_dst-jpg_p50x50&_nc_cat=105&ccb=1-7&_nc_sid=70495d&_nc_eui2=AeEsHwtgLwK6__Vd-2T1_K4lzXQFagrMDkXNdAVqCswORU0LJe3h43opgj_xOf1IaNCOAVIVdvB4Cs1aCNCv_7aD&_nc_ohc=cNnjFwBt4DUAX_sPsH8&_nc_zt=23&_nc_ht=scontent.fjsr1-1.fna&oh=00_AfAUBAz0P0ft5xlkt6ntu1L20eZmtbh7iBSd5PeIa-OvrA&oe=6408089E",
+      name: "Learn Html,Css,Javascript,Php,Mysql"
+   },
+   {
+      img: "https://scontent.fjsr1-1.fna.fbcdn.net/v/t1.6435-9/83515746_964821927269192_7932626834926545599_n.jpg?stp=c17.0.50.50a_cp0_dst-jpg_p50x50&_nc_cat=108&ccb=1-7&_nc_sid=70495d&_nc_eui2=AeEPso186sPHFFsrMidI0efMgdgQdKTiwH-B2BB0pOLAfzaBEB4rxnk0k1ePJoWbazt4CiC5KLsojRYC2Sw4ztXP&_nc_ohc=i-tVl3slCO0AX_6o5Ob&_nc_ht=scontent.fjsr1-1.fna&oh=00_AfB4TcUTkU6nOCj93B7elmq8VpFvLLs7E7b9_eNQWDPUWg&oe=642A9F41",
+      name: "Web Design and Development Group"
+   },
+   {
+      img: "https://scontent.fjsr1-1.fna.fbcdn.net/v/t39.30808-6/275892462_1017843762150900_8820144141179661237_n.jpg?stp=c43.0.50.50a_cp0_dst-jpg_p50x50&_nc_cat=108&ccb=1-7&_nc_sid=70495d&_nc_eui2=AeFptjpVcjNpA7EKhmt3M0If-Th1VHGPfy75OHVUcY9_Lkm6gUw7huqpwBtWEwWlaM-A2hK6C6ZmUNGGwdTdZM18&_nc_ohc=fYfTSlzm2FsAX8dxP3Y&_nc_oc=AQlpypq8qdD7aJjI9XRCuVrXPPLMrIP50_yPt5HkikEMm-AVzQ3r4qA9uiavZdClICs&_nc_zt=23&_nc_ht=scontent.fjsr1-1.fna&oh=00_AfDrHMkO9p_-JIZ_JtY8Bm4OZDOWm49q6Ud84lont9-WsQ&oe=64073903",
+      name: "Procoder Group"
+   },
+   {
+      img: "https://scontent.fjsr1-1.fna.fbcdn.net/v/t1.6435-9/103009408_2942697682473636_696765981720051712_n.jpg?stp=c23.0.50.50a_cp0_dst-jpg_p50x50&_nc_cat=107&ccb=1-7&_nc_sid=70495d&_nc_eui2=AeGCsAYDVySE5J4ExGRAyRJl9ZDzKniaF171kPMqeJoXXlCbA_VTlySx2uOc4alxQXnRegry8pkwJtVU4ROe2Skz&_nc_ohc=I1IIqRU1frMAX_ZmMF8&_nc_ht=scontent.fjsr1-1.fna&oh=00_AfAQ186xpObhr1pHJbWABqTmiJikKpduaScoEWM784zVjg&oe=642AA0A3",
+      name: "Freelancer Bangladesh"
+   },
+   {
+      img: "../images/icon/short-groups.png",
+      name: "See all shortcuts"
+   },
+]
+
+const showDataDisplay = (id, dataName) => {
+   const idName = document.getElementById(id)
+   dataName.map(group => {
+      idName.innerHTML += `
+      <a href="#" class="flex items-center py-2 px-2 rounded-md hover:bg-[#E4E6E9] duration-500">
+         <li class="list-none w-7 h-7">
+            <img class="w-5 h-5 rounded-lg" src="${group.img}" alt="">
+         </li>
+         <li class="list-none">
+            <p class="font-semibold text-base text-black">${group.name.length >= 14 ? group.name.slice(0, 20) : ""}...</p>
+         </li>
+      </a>
+      `
+   });
+}
+showDataDisplay("groups-all", groups);
+showDataDisplay("short-groups-all", groupShort);
+
+
+// const groupsAll = document.getElementById("");
