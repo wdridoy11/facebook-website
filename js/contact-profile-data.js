@@ -69,11 +69,11 @@ const facebookUser = [
    },
 ]
 
-const contactProfile = document.getElementById("contact-profile")
+const contactProfile = document.getElementById("contact-profile");
 facebookUser.map(user => {
    contactProfile.innerHTML += `
    <a href="#" class="flex items-center gap-3 mb-2 py-2 px-2 rounded-md hover:bg-[#E4E6E9] duration-500">
-      <li class="list-none">
+      <li class="list-none w-8 h-8 avatar online">
          <img class="w-8 h-8 rounded-full" src="${user.img}" alt="">
       </li>
       <li class="list-none">
@@ -81,4 +81,4 @@ facebookUser.map(user => {
       </li>
    </a>
    `
-})
+});
